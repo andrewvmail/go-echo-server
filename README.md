@@ -37,7 +37,10 @@ See [the latest release](https://github.com/jpillora/go-echo-server/releases/lat
 **Source**
 
 ``` sh
-$ go get -v github.com/jpillora/go-echo-server
+go get -v github.com/jpillora/go-echo-server
+# enable static linking
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' main.go
+docker build . 
 ```
 
 ## Deploy
